@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tính biểu phí xe</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 10px;
+      background: #f3f0eb;
+      color: #3a2618;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c8b8a8;
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      color: #5a3318;
+      line-height: 1.2;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .card {
+      border: 1px solid #b89373;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fffdfb;
+      min-width: 0;
+    }
+
+    .card-title {
+      background: #7a4b2b;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 10px 14px;
+    }
+
+    .card-body {
+      padding: 14px;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 16px;
+    }
+
+    .form-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px 16px;
+      margin-top: 12px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6d3d1f;
+      line-height: 1.25;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      font-size: 18px;
+      font-family: "Times New Roman", Times, serif;
+      border: 1px solid #ad947f;
+      border-radius: 6px;
+      background: #ffffff;
+      min-height: 44px;
+    }
+
+    input[readonly] {
+      background: #f3eee8;
+      font-weight: 700;
+      color: #6b3f20;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: 700;
+      border: none;
+    }
+
+    #calculateButton {
+      background: #2f6b5c;
+      color: #ffffff;
+    }
+
+    #clearButton {
+      background: #9b6a40;
+      color: #ffffff;
+    }
+
+    button:hover {
+      opacity: 0.95;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 17px;
+      table-layout: fixed;
+      word-break: break-word;
+    }
+
+    .summary-table td {
+      border: 1px solid #b89373;
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+      width: 56%;
+      background: #f7f1ea;
+      font-weight: 700;
+      color: #6b3f20;
+    }
+
+    .summary-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .result-box {
+      margin-top: 14px;
+      border: 1px solid #c9b37d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .result-header {
+      background: #d8c074;
+      color: #4f3214;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 10px 12px;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      border-top: 1px solid #e1d3a8;
+      font-size: 20px;
+      font-weight: 700;
+      background: #f7f0cb;
+    }
+
+    .result-row span:last-child {
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .result-row.total {
+      background: #6b3f20;
+      color: #ffffff;
+      font-size: 22px;
+    }
+
+    .result-row.final {
+      background: #2f6b5c;
+      color: #ffffff;
+      font-size: 23px;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 15px;
+      color: #6c6c6c;
+      line-height: 1.4;
+    }
+
+    .status {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .status.ok {
+      background: #eef8f0;
+      color: #146c2e;
+      border: 1px solid #b7dfbf;
+    }
+
+    .status.error {
+      background: #fdeeee;
+      color: #9b1c1c;
+      border: 1px solid #edb7b7;
+    }
+
+    .warning-note {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: #fdeeee;
+      color: #9b1c1c;
+      border: 1px solid #edb7b7;
+      font-size: 15px;
+      font-weight: 700;
+      display: none;
+      line-height: 1.4;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      background: #f0e3d4;
+      color: #6b3f20;
+      border: 1px solid #c9ad91;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .detail-title {
+      margin-top: 14px;
+      margin-bottom: 8px;
+      color: #6b3f20;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .dkbs-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #4f3214;
+    }
+
+    .dkbs-list li {
+      margin-bottom: 6px;
+    }
+
+    .input-error {
+      border: 2px solid #c62828 !important;
+      background: #fff3f3 !important;
+    }
+
+    .field-error-text {
+      margin-top: 4px;
+      color: #c62828;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1024px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 8px;
+      }
+
+      .container {
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .card-title {
+        font-size: 19px;
+        padding: 9px 12px;
+      }
+
+      .card-body {
+        padding: 12px;
+      }
+
+      .form-grid-2,
+      .form-grid-3,
+      .actions {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      label {
+        font-size: 16px;
+      }
+
+      input,
+      select,
+      button {
+        font-size: 16px;
+        padding: 9px 10px;
+        min-height: 42px;
+      }
+
+      .summary-table {
+        font-size: 15px;
+      }
+
+      .summary-table td {
+        padding: 8px 10px;
+      }
+
+      .result-header {
+        font-size: 19px;
+      }
+
+      .result-row {
+        font-size: 17px;
+        padding: 10px;
+      }
+
+      .result-row.total,
+      .result-row.final {
+        font-size: 18px;
+      }
+
+      .detail-title {
+        font-size: 16px;
+      }
+
+      .dkbs-list {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      .card-title {
+        font-size: 17px;
+      }
+
+      label {
+        font-size: 15px;
+      }
+
+      input,
+      select,
+      button {
+        font-size: 15px;
+      }
+
+      .summary-table,
+      .result-row,
+      .result-header {
+        font-size: 14px;
+      }
+
+      .summary-table td:first-child {
+        width: 50%;
+      }
+
+      .result-row.total,
+      .result-row.final {
+        font-size: 16px;
+      }
+
+      .chip {
+        font-size: 12px;
+      }
+
+      .note,
+      .status,
+      .warning-note,
+      .dkbs-list {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tính biểu phí xe</h1>
+    <p class="note-ref">(Chỉ mang tính chất tham khảo)</p>
+    <div class="page-grid">
+      <div>
+        <div class="card">
+          <div class="card-title">Thông tin tính phí</div>
+          <div class="card-body">
+            <div class="form-grid-2">
+              <div class="field">
+                <label for="vehicleValue">Giá trị xe</label>
+                <input id="vehicleValue" type="text" inputmode="numeric" placeholder="Ví dụ: 890,000,000" />
+              </div>
+
+              <div class="field">
+                <label for="insuredValue">Tiền bảo hiểm</label>
+                <input id="insuredValue" type="text" inputmode="numeric" placeholder="Ví dụ: 890,000,000" />
+              </div>
+
+              <div class="field">
+                <label for="startDate">Từ ngày</label>
+                <input id="startDate" type="date" />
+              </div>
+
+              <div class="field">
+                <label for="endDate">Đến ngày</label>
+                <input id="endDate" type="date" />
+              </div>
+
+              <div class="field">
+                <label for="durationMonths">Tổng thời hạn BH (tháng)</label>
+                <input id="durationMonths" type="text" readonly />
+              </div>
+
+              <div class="field">
+                <label for="usage">Mục đích sử dụng</label>
+                <select id="usage">
+                  <option value="">Chọn mục đích sử dụng</option>
+                  <option value="KD">KD</option>
+                  <option value="KKD">KKD</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="vehicleType">Loại xe</label>
+                <select id="vehicleType" disabled>
+                  <option value="">Chọn loại xe</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="field">
+                <label for="manufactureYear">Năm SX</label>
+                <input id="manufactureYear" type="number" placeholder="Ví dụ: 2022" />
+              </div>
+
+              <div class="field">
+                <label for="usageYears">Năm sử dụng</label>
+                <input id="usageYears" type="number" readonly />
+              </div>
+
+              <div class="field">
+                <label for="seatCount">Số chỗ ngồi</label>
+                <input id="seatCount" type="number" placeholder="Ví dụ: 7" />
+              </div>
+
+              <div class="field">
+                <label for="payload">Trọng tải</label>
+                <input id="payload" type="number" placeholder="Ví dụ: 3500" />
+              </div>
+
+              <div class="field">
+                <label for="tndsParticipation">TNDS</label>
+                <select id="tndsParticipation">
+                  <option value="NO">Không tham gia</option>
+                  <option value="YES">Có tham gia</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="dkbsInput">Điều khoản bổ sung</label>
+                <input id="dkbsInput" type="text" value="04;05A;06" placeholder="Ví dụ: 04;05A;06" />
+              </div>
+            </div>
+
+            <div class="actions">
+              <button id="calculateButton" type="button">Tính phí</button>
+              <button id="clearButton" type="button">Xóa dữ liệu</button>
+            </div>
+
+            <div id="statusBox" class="status ok">
+              Chọn mục đích sử dụng để lọc loại xe, sau đó nhập thông tin để tra phí.
+            </div>
+
+            <div id="tndsWarning" class="warning-note">
+              Phí TNDS chỉ tính cho 1 năm.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="card-title">Thông tin tra cứu</div>
+          <div class="card-body">
+            <table class="summary-table">
+              <tr>
+                <td>Mục đích sử dụng</td>
+                <td id="summaryUsage">-</td>
+              </tr>
+              <tr>
+                <td>Loại xe</td>
+                <td id="summaryVehicleType">-</td>
+              </tr>
+              <tr>
+                <td>Năm sử dụng</td>
+                <td id="summaryUsageYears">-</td>
+              </tr>
+              <tr>
+                <td>Tiền bảo hiểm</td>
+                <td id="summaryInsuredValue">-</td>
+              </tr>
+              <tr>
+                <td>Tỉ lệ VCX</td>
+                <td id="summaryVcxRate">-</td>
+              </tr>
+              <tr>
+                <td>Tổng tỉ lệ / phí ĐKBS</td>
+                <td id="summaryDkbsRate">-</td>
+              </tr>
+              <tr>
+                <td>Phí TNDS 1 năm</td>
+                <td id="summaryTndsFee">-</td>
+              </tr>
+            </table>
+
+            <div class="detail-title">Mã ĐKBS đã chọn</div>
+            <div id="selectedDkbsChips" class="chips"></div>
+
+            <div class="detail-title">Chi tiết ĐKBS</div>
+            <ul id="dkbsDetails" class="dkbs-list"></ul>
+
+            <div class="result-box">
+              <div class="result-header">Kết quả tính phí</div>
+
+              <div class="result-row">
+                <span>Tổng phí VCX</span>
+                <span id="vcxFeeText">0</span>
+              </div>
+
+              <div class="result-row">
+                <span>ĐKBS cố định</span>
+                <span id="dkbsFeeText">0</span>
+              </div>
+
+              <div class="result-row">
+                <span>TNDS 1 năm</span>
+                <span id="tndsFeeText">0</span>
+              </div>
+
+              <div class="result-row total">
+                <span>Tổng VCX (bao gồm VAT)</span>
+                <span id="grandTotalText">0</span>
+              </div>
+
+              <div class="result-row final">
+                <span>Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT)</span>
+                <span id="totalWithTndsText">0</span>
+              </div>
+            </div>
+
+            <!-- <div class="note">
+              Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT) = Tổng VCX + TNDS 1 năm -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
