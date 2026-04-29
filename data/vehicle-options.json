@@ -1,0 +1,248 @@
+[
+  {
+    "id": "bus_kd",
+    "vehicle_label": "Bus",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "kinh_doanh_van_tai_hanh_khach_xe_chay_tuyen_xe_khach_lien_tinh_cac_xe_ghe_ngoi_kd",
+    "vehicle_label": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_ben_tu_do_kd",
+    "vehicle_label": "Rơ mooc Ben tự đổ",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_gan_thiet_bi_chuyen_dung_kd",
+    "vehicle_label": "Rơ mooc gắn thiết bị chuyên dụng",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_sat_xi_dong_thung_kd",
+    "vehicle_label": "Rơ mooc sat xi, đóng thùng",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "tai_hoat_dong_trong_vung_khai_thac_khoang_san_kd",
+    "vehicle_label": "Tải hoạt động trong vùng khai thác khoáng sản",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "taxi_cong_nghe_kd",
+    "vehicle_label": "Taxi công nghệ",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "taxi_truyen_thong_thuong_quyen_kd",
+    "vehicle_label": "Taxi truyền thống, thương quyền",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_ban_tai_pickup_kd",
+    "vehicle_label": "Xe bán tải (Pickup)",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_hang_khac_kd",
+    "vehicle_label": "Xe chở hàng - Khác",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_nguoi_tap_lai_kd",
+    "vehicle_label": "Xe chở người - Tập lái",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_nguoi_noi_cang_san_bay_hoac_xe_dien_cho_nguoi_trong_khu_du_lich_san_golf_noi_bo_nha_may_noi_bo_nong_truong_khu_cong_nghiep_san_bay_kd",
+    "vehicle_label": "Xe chở người nội cảng sân bay hoặc Xe điện chở người trong khu du lịch, sân golf, nội bộ nhà máy, nội bộ nông trường, khu công nghiệp, sân bay",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_thue_tu_lai_kd",
+    "vehicle_label": "Xe cho thuê tự lái",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_chuyen_dung_cho_xang_dau_cho_rac_kd",
+    "vehicle_label": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_dau_keo_kd",
+    "vehicle_label": "Xe đầu kéo",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_dong_lanh_kd",
+    "vehicle_label": "Xe đông lạnh",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_kd_cho_nguoi_khac_kd",
+    "vehicle_label": "Xe KD chở người khác",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_kd_hanh_khach_chay_tuyen_lien_tinh_giuong_nam_kd",
+    "vehicle_label": "Xe KD hành khách chạy tuyến, liên tỉnh (giường nằm)",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_kd_hop_dong_kd_cho_nguoi_khach_du_lich_kd",
+    "vehicle_label": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_kd_van_tai_cho_hang_kd",
+    "vehicle_label": "Xe KD vận tải - Chở hàng",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_tai_tren_10_tan_cho_hang_kd",
+    "vehicle_label": "Xe tải trên 10 tấn - Chở hàng",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "xe_tai_van_kd",
+    "vehicle_label": "Xe Tải van",
+    "usage": "KD",
+    "active": true
+  },
+  {
+    "id": "bus_kkd",
+    "vehicle_label": "Bus",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "cho_nguoi_kkd",
+    "vehicle_label": "Chở người",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_ben_tu_do_kkd",
+    "vehicle_label": "Rơ mooc Ben tự đổ",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_gan_thiet_bi_chuyen_dung_kkd",
+    "vehicle_label": "Rơ mooc gắn thiết bị chuyên dụng",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "ro_mooc_sat_xi_dong_thung_kkd",
+    "vehicle_label": "Rơ mooc sat xi, đóng thùng",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "tai_hoat_dong_trong_vung_khai_thac_khoang_san_kkd",
+    "vehicle_label": "Tải hoạt động trong vùng khai thác khoáng sản",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_ban_tai_pickup_kkd",
+    "vehicle_label": "Xe bán tải (Pickup)",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_hang_khac_kkd",
+    "vehicle_label": "Xe chở hàng - Khác",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_hang_khac_xe_tap_lai_cho_hang_kkd",
+    "vehicle_label": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_nguoi_tap_lai_kkd",
+    "vehicle_label": "Xe chở người - Tập lái",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_nguoi_noi_cang_san_bay_hoac_xe_dien_cho_nguoi_trong_khu_du_lich_san_golf_noi_bo_nha_may_noi_bo_nong_truong_khu_cong_nghiep_san_bay_kkd",
+    "vehicle_label": "Xe chở người nội cảng sân bay hoặc Xe điện chở người trong khu du lịch, sân golf, nội bộ nhà máy, nội bộ nông trường, khu công nghiệp, sân bay",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_thue_tu_lai_kkd",
+    "vehicle_label": "Xe cho thuê tự lái",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cho_tien_kkd",
+    "vehicle_label": "Xe chở tiền",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_chuyen_dung_cho_xang_dau_cho_rac_kkd",
+    "vehicle_label": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_cuu_thuong_kkd",
+    "vehicle_label": "Xe cứu thương",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_dau_keo_kkd",
+    "vehicle_label": "Xe đầu kéo",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_dong_lanh_kkd",
+    "vehicle_label": "Xe đông lạnh",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_tai_tren_10_tan_cho_hang_kkd",
+    "vehicle_label": "Xe tải trên 10 tấn - Chở hàng",
+    "usage": "KKD",
+    "active": true
+  },
+  {
+    "id": "xe_tai_van_kkd",
+    "vehicle_label": "Xe Tải van",
+    "usage": "KKD",
+    "active": true
+  }
+]
