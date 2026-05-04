@@ -3,77 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tính biểu phí xe</title>
+  <title>Tính biểu phí xe STB</title>
   <style>
+    :root {
+      --bg: #f3f0eb;
+      --text: #3a2618;
+      --border: #c8b8a8;
+      --border-strong: #b89373;
+      --brown: #7a4b2b;
+      --brown-dark: #6b3f20;
+      --green: #2f6b5c;
+      --gold: #d8c074;
+      --panel: #fffdfb;
+      --cell: #f7f1ea;
+      --result: #f7f0cb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 10px;
-      background: #f3f0eb;
-      color: #3a2618;
+      padding: 4px;
+      background: var(--bg);
+      color: var(--text);
       font-family: "Times New Roman", Times, serif;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid #c8b8a8;
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     h1 {
-      margin: 0 0 14px;
-      font-size: 28px;
+      margin: 0 0 2px;
+      font-size: 20px;
       color: #5a3318;
+      line-height: 1.1;
+    }
+
+    .note-ref {
+      margin: 0 0 8px;
+      font-size: 11px;
+      font-style: italic;
+      color: #7a6a5b;
       line-height: 1.2;
     }
 
     .page-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
+      grid-template-columns: minmax(0, 1.9fr) minmax(320px, 0.95fr);
+      gap: 8px;
       align-items: start;
     }
 
+    .left-col,
+    .right-col {
+      min-width: 0;
+    }
+
     .card {
-      border: 1px solid #b89373;
+      border: 1px solid var(--border-strong);
       border-radius: 8px;
       overflow: hidden;
-      background: #fffdfb;
+      background: var(--panel);
       min-width: 0;
     }
 
     .card-title {
-      background: #7a4b2b;
-      color: #ffffff;
+      background: var(--brown);
+      color: #fff;
       font-weight: 700;
-      font-size: 22px;
-      padding: 10px 14px;
+      font-size: 16px;
+      padding: 8px 12px;
+      line-height: 1.1;
     }
 
     .card-body {
-      padding: 14px;
+      padding: 10px;
     }
 
     .form-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px 16px;
+      gap: 8px 10px;
     }
 
     .form-grid-3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px 16px;
-      margin-top: 12px;
+      gap: 8px 10px;
+      margin-top: 8px;
     }
 
     .field {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
       min-width: 0;
     }
 
@@ -82,24 +114,23 @@
     }
 
     label {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 700;
       color: #6d3d1f;
-      line-height: 1.25;
+      line-height: 1.1;
     }
 
     input,
     select,
     button {
       width: 100%;
-      box-sizing: border-box;
-      padding: 10px 12px;
-      font-size: 18px;
+      padding: 7px 9px;
+      font-size: 14px;
       font-family: "Times New Roman", Times, serif;
       border: 1px solid #ad947f;
       border-radius: 6px;
-      background: #ffffff;
-      min-height: 44px;
+      background: #fff;
+      min-height: 36px;
     }
 
     input[readonly] {
@@ -115,13 +146,13 @@
     }
 
     #calculateButton {
-      background: #2f6b5c;
-      color: #ffffff;
+      background: var(--green);
+      color: #fff;
     }
 
     #clearButton {
       background: #9b6a40;
-      color: #ffffff;
+      color: #fff;
     }
 
     button:hover {
@@ -131,29 +162,35 @@
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .right-col .card {
+      position: sticky;
+      top: 6px;
     }
 
     .summary-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 17px;
       table-layout: fixed;
-      word-break: break-word;
+      font-size: 13px;
     }
 
     .summary-table td {
-      border: 1px solid #b89373;
-      padding: 10px 12px;
+      border: 1px solid var(--border-strong);
+      padding: 7px 8px;
       vertical-align: top;
+      line-height: 1.2;
+      word-break: break-word;
     }
 
     .summary-table td:first-child {
-      width: 56%;
-      background: #f7f1ea;
+      width: 58%;
+      background: var(--cell);
       font-weight: 700;
-      color: #6b3f20;
+      color: var(--brown-dark);
     }
 
     .summary-table td:last-child {
@@ -161,64 +198,113 @@
       font-weight: 700;
     }
 
+    .detail-title {
+      margin-top: 10px;
+      margin-bottom: 6px;
+      color: var(--brown-dark);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      background: #f0e3d4;
+      color: #6b3f20;
+      border: 1px solid #c9ad91;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .dkbs-scroll {
+      max-height: 120px;
+      overflow: auto;
+      padding-right: 2px;
+    }
+
+    .dkbs-list {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #4f3214;
+    }
+
+    .dkbs-list li {
+      margin-bottom: 4px;
+    }
+
     .result-box {
-      margin-top: 14px;
+      margin-top: 10px;
       border: 1px solid #c9b37d;
       border-radius: 8px;
       overflow: hidden;
     }
 
     .result-header {
-      background: #d8c074;
+      background: var(--gold);
       color: #4f3214;
       font-weight: 700;
-      font-size: 22px;
-      padding: 10px 12px;
+      font-size: 16px;
+      padding: 8px 10px;
+      line-height: 1.15;
     }
 
     .result-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 12px;
-      padding: 12px;
+      gap: 8px;
+      padding: 8px 10px;
       border-top: 1px solid #e1d3a8;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 700;
-      background: #f7f0cb;
+      background: var(--result);
     }
 
-    .result-row span:last-child {
+    .result-label {
+      flex: 1 1 auto;
+      min-width: 0;
+      line-height: 1.15;
+    }
+
+    .result-value {
+      flex: 0 0 auto;
+      min-width: 78px;
+      white-space: nowrap;
       text-align: right;
-      word-break: break-word;
-    }
-
-    .result-row.total {
-      background: #6b3f20;
-      color: #ffffff;
-      font-size: 22px;
+      line-height: 1.15;
     }
 
     .result-row.final {
-      background: #2f6b5c;
-      color: #ffffff;
-      font-size: 23px;
+      background: var(--green);
+      color: #fff;
+      font-size: 16px;
     }
 
     .note {
-      margin-top: 12px;
-      font-size: 15px;
+      margin-top: 8px;
+      font-size: 12px;
       color: #6c6c6c;
-      line-height: 1.4;
+      line-height: 1.3;
     }
 
     .status {
       margin-top: 10px;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border-radius: 6px;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .status.ok {
@@ -234,53 +320,16 @@
     }
 
     .warning-note {
-      margin-top: 10px;
-      padding: 10px 12px;
+      margin-top: 8px;
+      padding: 8px 10px;
       border-radius: 6px;
       background: #fdeeee;
       color: #9b1c1c;
       border: 1px solid #edb7b7;
-      font-size: 15px;
-      font-weight: 700;
-      display: none;
-      line-height: 1.4;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .chip {
-      background: #f0e3d4;
-      color: #6b3f20;
-      border: 1px solid #c9ad91;
-      border-radius: 999px;
-      padding: 6px 10px;
       font-size: 13px;
       font-weight: 700;
-    }
-
-    .detail-title {
-      margin-top: 14px;
-      margin-bottom: 8px;
-      color: #6b3f20;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .dkbs-list {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 15px;
-      line-height: 1.5;
-      color: #4f3214;
-    }
-
-    .dkbs-list li {
-      margin-bottom: 6px;
+      display: none;
+      line-height: 1.35;
     }
 
     .input-error {
@@ -289,136 +338,185 @@
     }
 
     .field-error-text {
-      margin-top: 4px;
+      margin-top: 3px;
       color: #c62828;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     @media (max-width: 1024px) {
       .page-grid {
         grid-template-columns: 1fr;
       }
+
+      .right-col .card {
+        position: static;
+      }
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 8px;
+        padding: 2px;
       }
 
       .container {
-        padding: 10px;
-        border-radius: 8px;
+        padding: 6px;
+        border-radius: 6px;
       }
 
       h1 {
-        font-size: 22px;
-        margin-bottom: 12px;
+        font-size: 18px;
+      }
+
+      .note-ref {
+        font-size: 10px;
+        margin-bottom: 6px;
       }
 
       .card-title {
-        font-size: 19px;
-        padding: 9px 12px;
+        font-size: 15px;
+        padding: 7px 10px;
       }
 
       .card-body {
-        padding: 12px;
+        padding: 8px;
       }
 
       .form-grid-2,
       .form-grid-3,
       .actions {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 6px;
       }
 
       label {
-        font-size: 16px;
+        font-size: 13px;
       }
 
       input,
       select,
       button {
-        font-size: 16px;
-        padding: 9px 10px;
-        min-height: 42px;
+        font-size: 14px;
+        padding: 7px 8px;
+        min-height: 34px;
+      }
+
+      .right-col {
+        order: -1;
       }
 
       .summary-table {
-        font-size: 15px;
+        font-size: 12px;
       }
 
       .summary-table td {
-        padding: 8px 10px;
-      }
-
-      .result-header {
-        font-size: 19px;
-      }
-
-      .result-row {
-        font-size: 17px;
-        padding: 10px;
-      }
-
-      .result-row.total,
-      .result-row.final {
-        font-size: 18px;
+        padding: 6px 7px;
       }
 
       .detail-title {
-        font-size: 16px;
+        font-size: 13px;
+        margin-top: 8px;
+        margin-bottom: 5px;
+      }
+
+      .chips {
+        gap: 4px;
+      }
+
+      .chip {
+        padding: 3px 7px;
+        font-size: 10px;
+      }
+
+      .dkbs-scroll {
+        max-height: 80px;
       }
 
       .dkbs-list {
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .result-box {
+        margin-top: 8px;
+      }
+
+      .result-header {
         font-size: 14px;
+        padding: 7px 8px;
+      }
+
+      .result-row {
+        font-size: 13px;
+        padding: 7px 8px;
+      }
+
+      .result-row.final {
+        font-size: 14px;
+      }
+
+      .result-value {
+        min-width: 64px;
+      }
+
+      .status,
+      .warning-note,
+      .note {
+        font-size: 11px;
       }
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 20px;
+        font-size: 16px;
       }
 
       .card-title {
-        font-size: 17px;
+        font-size: 14px;
       }
 
       label {
-        font-size: 15px;
+        font-size: 12px;
       }
 
       input,
       select,
       button {
-        font-size: 15px;
+        font-size: 13px;
+        min-height: 32px;
       }
 
-      .summary-table,
-      .result-row,
-      .result-header {
-        font-size: 14px;
+      .summary-table {
+        font-size: 11px;
       }
 
       .summary-table td:first-child {
-        width: 50%;
+        width: 52%;
       }
 
-      .result-row.total,
-      .result-row.final {
-        font-size: 16px;
+      .result-header {
+        font-size: 13px;
       }
 
-      .chip {
+      .result-row {
         font-size: 12px;
       }
 
-      .note,
+      .result-row.final {
+        font-size: 13px;
+      }
+
+      .result-value {
+        min-width: 58px;
+      }
+
+      .dkbs-list,
       .status,
       .warning-note,
-      .dkbs-list {
-        font-size: 13px;
+      .note,
+      .field-error-text {
+        font-size: 10px;
       }
     }
   </style>
@@ -427,8 +525,9 @@
   <div class="container">
     <h1>Tính biểu phí xe</h1>
     <p class="note-ref">(Chỉ mang tính chất tham khảo)</p>
+
     <div class="page-grid">
-      <div>
+      <div class="left-col">
         <div class="card">
           <div class="card-title">Thông tin tính phí</div>
           <div class="card-body">
@@ -526,9 +625,9 @@
         </div>
       </div>
 
-      <div>
+      <div class="right-col">
         <div class="card">
-          <div class="card-title">Thông tin tra cứu</div>
+          <div class="card-title">Thông tin bảo hiểm</div>
           <div class="card-body">
             <table class="summary-table">
               <tr>
@@ -561,43 +660,35 @@
               </tr>
             </table>
 
+            <div class="result-box">
+              <div class="result-header">TỔNG PHÍ BAO GỒM VAT</div>
+
+              <div class="result-row">
+                <span class="result-label">Tổng phí VCX (I)</span>
+                <span class="result-value" id="vcxFeeText">-</span>
+              </div>
+
+              <div class="result-row">
+                <span class="result-label">TNDS 1 năm (II)</span>
+                <span class="result-value" id="tndsFeeText">-</span>
+              </div>
+
+              <div class="result-row final">
+                <span class="result-label">Tổng (I) + (II)</span>
+                <span class="result-value" id="totalWithTndsText">-</span>
+              </div>
+            </div>
+
             <div class="detail-title">Mã ĐKBS đã chọn</div>
             <div id="selectedDkbsChips" class="chips"></div>
 
             <div class="detail-title">Chi tiết ĐKBS</div>
-            <ul id="dkbsDetails" class="dkbs-list"></ul>
-
-            <div class="result-box">
-              <div class="result-header">Kết quả tính phí</div>
-
-              <div class="result-row">
-                <span>Tổng phí VCX</span>
-                <span id="vcxFeeText">0</span>
-              </div>
-
-              <div class="result-row">
-                <span>ĐKBS cố định</span>
-                <span id="dkbsFeeText">0</span>
-              </div>
-
-              <div class="result-row">
-                <span>TNDS 1 năm</span>
-                <span id="tndsFeeText">0</span>
-              </div>
-
-              <div class="result-row total">
-                <span>Tổng VCX (bao gồm VAT)</span>
-                <span id="grandTotalText">0</span>
-              </div>
-
-              <div class="result-row final">
-                <span>Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT)</span>
-                <span id="totalWithTndsText">0</span>
-              </div>
+            <div class="dkbs-scroll">
+              <ul id="dkbsDetails" class="dkbs-list"></ul>
             </div>
 
-            <!-- <div class="note">
-              Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT) = Tổng VCX + TNDS 1 năm -->
+            <div class="note">
+              Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT) = Tổng phí VCX + TNDS 1 năm
             </div>
           </div>
         </div>
