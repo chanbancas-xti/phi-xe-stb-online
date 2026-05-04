@@ -8783,7 +8783,7 @@
     "seat_count": 0,
     "payload_from": 0,
     "payload_to": 10000000,
-    "usage": "KKD",
+    "usage": "KD",
     "fee_before_vat": 4800000,
     "vat": 480000,
     "fee_with_vat": 5280000
