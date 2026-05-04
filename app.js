@@ -384,6 +384,33 @@ function getFormData() {
   };
 }
 
+function getTndsCandidateRows(data) {
+  return state.tndsRates.filter((row) => {
+    const usageOk =
+      normalizeCode(getField(row, ["usage"], "")) === normalizeCode(data.usage);
+
+    const vehicleOk = vehicleMatches(
+      [
+        getField(row, ["vehicle_label"], ""),
+        getField(row, ["vehicle_name"], ""),
+        getField(row, ["vehicle_code"], "")
+      ],
+      data.selectedVehicle
+    );
+
+    return usageOk && vehicleOk;
+  });
+}
+
+function tndsUsesSeatCount(data) {
+  const candidateRows = getTndsCandidateRows(data);
+
+  return candidateRows.some((row) => {
+    const seatCount = parseJsonNumber(getField(row, ["seat_count"], 0));
+    return seatCount > 0;
+  });
+}
+
 function validateForm(data) {
   const currentYear = new Date().getFullYear();
   const errors = [];
@@ -451,30 +478,41 @@ function validateForm(data) {
     });
   }
 
-  const isPassenger = data.selectedVehicle
+  const isPassengerForVcx = data.selectedVehicle
     ? isPassengerVehicleLabel(data.selectedVehicle.vehicle_label)
     : false;
 
-  if (isPassenger && data.seatCount <= 0) {
+  if (isPassengerForVcx && data.seatCount <= 0) {
     errors.push({
       field: "seatCount",
       message: "Bắt buộc điền số chỗ ngồi cho loại xe này."
     });
   }
 
-  if (data.tndsParticipation === "YES") {
-    if (isPassenger) {
-      if (data.seatCount <= 0) {
+  if (data.tndsParticipation === "YES" && data.selectedVehicle) {
+    const candidateRows = getTndsCandidateRows(data);
+
+    if (!candidateRows.length) {
+      errors.push({
+        field: "vehicleType",
+        message: "Không tìm thấy dữ liệu TNDS cho loại xe và mục đích sử dụng này."
+      });
+    } else {
+      const useSeatCount = tndsUsesSeatCount(data);
+
+      if (useSeatCount) {
+        if (data.seatCount <= 0) {
+          errors.push({
+            field: "seatCount",
+            message: "TNDS: Bắt buộc điền số chỗ ngồi cho loại xe này."
+          });
+        }
+      } else if (data.payload <= 0) {
         errors.push({
-          field: "seatCount",
-          message: "TNDS: Bắt buộc điền số chỗ ngồi cho loại xe này."
+          field: "payload",
+          message: "TNDS: Bắt buộc điền trọng tải cho loại xe này."
         });
       }
-    } else if (data.payload <= 0) {
-      errors.push({
-        field: "payload",
-        message: "TNDS: Bắt buộc điền trọng tải cho loại xe này."
-      });
     }
   }
 
@@ -649,29 +687,33 @@ function calculateDkbs(data) {
 }
 
 function findTndsRow(data) {
-  return state.tndsRates.find((row) => {
-    const usageOk = normalizeCode(getField(row, ["usage"], "")) === normalizeCode(data.usage);
-    const vehicleOk = vehicleMatches(
-      [
-        getField(row, ["vehicle_label"], ""),
-        getField(row, ["vehicle_name"], ""),
-        getField(row, ["vehicle_code"], "")
-      ],
-      data.selectedVehicle
+  const candidateRows = getTndsCandidateRows(data);
+
+  if (!candidateRows.length) {
+    return null;
+  }
+
+  const useSeatCount = candidateRows.some((row) => {
+    const seatCount = parseJsonNumber(getField(row, ["seat_count"], 0));
+    return seatCount > 0;
+  });
+
+  if (useSeatCount) {
+    return (
+      candidateRows.find((row) => {
+        const seatCount = parseJsonNumber(getField(row, ["seat_count"], 0));
+        return seatCount > 0 && seatCount === data.seatCount;
+      }) || null
     );
+  }
 
-    const isPassenger = isPassengerVehicleLabel(data.selectedVehicle?.vehicle_label || "");
-
-    if (isPassenger) {
-      const seatCount = parseJsonNumber(getField(row, ["seat_count"], 0));
-      return usageOk && vehicleOk && seatCount === data.seatCount;
-    }
-
-    const payloadFrom = parseJsonNumber(getField(row, ["payload_from"], 0));
-    const payloadTo = parseJsonNumber(getField(row, ["payload_to"], Number.MAX_SAFE_INTEGER));
-
-    return usageOk && vehicleOk && inRange(data.payload, payloadFrom, payloadTo);
-  }) || null;
+  return (
+    candidateRows.find((row) => {
+      const payloadFrom = parseJsonNumber(getField(row, ["payload_from"], 0));
+      const payloadTo = parseJsonNumber(getField(row, ["payload_to"], Number.MAX_SAFE_INTEGER));
+      return inRange(data.payload, payloadFrom, payloadTo);
+    }) || null
+  );
 }
 
 function clearSummary() {
@@ -869,7 +911,7 @@ function calculateAll() {
       clearSummary();
       showTndsWarning(true);
 
-      if (isPassengerVehicleLabel(data.selectedVehicle.vehicle_label)) {
+      if (tndsUsesSeatCount(data)) {
         setFieldError("seatCount", "Không tìm thấy phí TNDS theo số chỗ ngồi.");
       } else {
         setFieldError("payload", "Không tìm thấy phí TNDS theo trọng tải.");
