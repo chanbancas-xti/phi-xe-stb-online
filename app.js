@@ -4,6 +4,22 @@ const PASSENGER_LABELS = [
   "Xe KD Hợp đồng (KD chở người - khách du lịch,...)"
 ];
 
+const FIELD_ERROR_IDS = [
+  "vehicleValue",
+  "insuredValue",
+  "startDate",
+  "endDate",
+  "durationMonths",
+  "usage",
+  "vehicleType",
+  "manufactureYear",
+  "usageYears",
+  "seatCount",
+  "payload",
+  "dkbsInput",
+  "tndsParticipation"
+];
+
 const state = {
   vehicleOptions: [],
   vcxRates: [],
@@ -39,7 +55,6 @@ const els = {
   summaryTndsFee: document.getElementById("summaryTndsFee"),
 
   vcxFeeText: document.getElementById("vcxFeeText"),
-  dkbsFeeText: document.getElementById("dkbsFeeText"),
   tndsFeeText: document.getElementById("tndsFeeText"),
   grandTotalText: document.getElementById("grandTotalText"),
   totalWithTndsText: document.getElementById("totalWithTndsText"),
@@ -165,6 +180,58 @@ function inRange(value, fromValue, toValue) {
   const from = Number(fromValue);
   const to = Number(toValue);
   return v >= from && v <= to;
+}
+
+function getElementByIdSafe(id) {
+  return document.getElementById(id);
+}
+
+function clearFieldErrors() {
+  for (const id of FIELD_ERROR_IDS) {
+    const el = getElementByIdSafe(id);
+    if (!el) continue;
+
+    el.classList.remove("input-error");
+
+    const next = el.nextElementSibling;
+    if (next && next.classList.contains("field-error-text")) {
+      next.remove();
+    }
+  }
+}
+
+function setFieldError(id, message) {
+  const el = getElementByIdSafe(id);
+  if (!el) return;
+
+  el.classList.add("input-error");
+
+  const next = el.nextElementSibling;
+  if (next && next.classList.contains("field-error-text")) {
+    next.textContent = message;
+    return;
+  }
+
+  const errorEl = document.createElement("div");
+  errorEl.className = "field-error-text";
+  errorEl.textContent = message;
+  el.insertAdjacentElement("afterend", errorEl);
+}
+
+function clearFieldErrorOnInput(id) {
+  const el = getElementByIdSafe(id);
+  if (!el) return;
+
+  const handler = () => {
+    el.classList.remove("input-error");
+    const next = el.nextElementSibling;
+    if (next && next.classList.contains("field-error-text")) {
+      next.remove();
+    }
+  };
+
+  el.addEventListener("input", handler);
+  el.addEventListener("change", handler);
 }
 
 async function loadJson(path) {
@@ -319,56 +386,102 @@ function getFormData() {
 
 function validateForm(data) {
   const currentYear = new Date().getFullYear();
+  const errors = [];
 
   if (!data.usage) {
-    return "Bạn chưa chọn mục đích sử dụng.";
+    errors.push({ field: "usage", message: "Bạn chưa chọn mục đích sử dụng." });
   }
 
   if (!data.selectedVehicle) {
-    return "Bạn chưa chọn loại xe.";
+    errors.push({ field: "vehicleType", message: "Bạn chưa chọn loại xe." });
   }
 
   if (data.vehicleValue < MIN_AMOUNT) {
-    return "Giá trị xe phải lớn hơn hoặc bằng 200.000.000.";
+    errors.push({
+      field: "vehicleValue",
+      message: "Giá trị xe phải lớn hơn hoặc bằng 200.000.000."
+    });
   }
 
   if (data.insuredValue < MIN_AMOUNT) {
-    return "Tiền bảo hiểm phải lớn hơn hoặc bằng 200.000.000.";
+    errors.push({
+      field: "insuredValue",
+      message: "Tiền bảo hiểm phải lớn hơn hoặc bằng 200.000.000."
+    });
   }
 
-  if (!data.startDate || !data.endDate) {
-    return "Bạn chưa nhập đầy đủ thời hạn bảo hiểm.";
+  if (!data.startDate) {
+    errors.push({ field: "startDate", message: "Bạn chưa nhập từ ngày." });
   }
 
-  if (data.durationMonths < 6) {
-    return "Thời hạn tham gia phải từ 6 tháng trở lên.";
+  if (!data.endDate) {
+    errors.push({ field: "endDate", message: "Bạn chưa nhập đến ngày." });
+  }
+
+  if (data.startDate && data.endDate) {
+    const start = new Date(data.startDate);
+    const end = new Date(data.endDate);
+
+    if (end < start) {
+      errors.push({
+        field: "endDate",
+        message: "Đến ngày phải lớn hơn hoặc bằng từ ngày."
+      });
+    }
+
+    if (data.durationMonths < 6) {
+      errors.push({
+        field: "durationMonths",
+        message: "Thời hạn tham gia phải từ 6 tháng trở lên."
+      });
+    }
   }
 
   if (!data.manufactureYear || data.manufactureYear < 1900 || data.manufactureYear > currentYear) {
-    return "Năm sản xuất không hợp lệ.";
+    errors.push({
+      field: "manufactureYear",
+      message: "Năm sản xuất không hợp lệ."
+    });
   }
 
   if (data.usageYears < 0) {
-    return "Năm sử dụng không hợp lệ.";
+    errors.push({
+      field: "usageYears",
+      message: "Năm sử dụng không hợp lệ."
+    });
   }
 
-  const isPassenger = isPassengerVehicleLabel(data.selectedVehicle.vehicle_label);
+  const isPassenger = data.selectedVehicle
+    ? isPassengerVehicleLabel(data.selectedVehicle.vehicle_label)
+    : false;
 
   if (isPassenger && data.seatCount <= 0) {
-    return "Bắt buộc điền số chỗ ngồi cho loại xe này.";
+    errors.push({
+      field: "seatCount",
+      message: "Bắt buộc điền số chỗ ngồi cho loại xe này."
+    });
   }
 
   if (data.tndsParticipation === "YES") {
     if (isPassenger) {
       if (data.seatCount <= 0) {
-        return "TNDS: Bắt buộc điền số chỗ ngồi cho loại xe này.";
+        errors.push({
+          field: "seatCount",
+          message: "TNDS: Bắt buộc điền số chỗ ngồi cho loại xe này."
+        });
       }
     } else if (data.payload <= 0) {
-      return "TNDS: Bắt buộc điền trọng tải cho loại xe này.";
+      errors.push({
+        field: "payload",
+        message: "TNDS: Bắt buộc điền trọng tải cho loại xe này."
+      });
     }
   }
 
-  return null;
+  return {
+    valid: errors.length === 0,
+    errors
+  };
 }
 
 function findVcxRow(data) {
@@ -438,6 +551,12 @@ function parseDkbsCodes(value) {
     .filter(Boolean);
 }
 
+function isDkbsBlocked(row) {
+  const type = normalizeCode(getField(row, ["value_type"], ""));
+  const message = normalizeCode(getField(row, ["message"], ""));
+  return type === "BLOCK" || message === "KPC" || message === "CHECKLẠIBẢNG";
+}
+
 function findDkbsRow(data, code) {
   return state.dkbsRates.find((row) => {
     const codeOk = normalizeCode(getField(row, ["dkbs_code"], "")) === code;
@@ -483,7 +602,7 @@ function calculateDkbs(data) {
     const message = getField(row, ["message"], "");
     const name = getField(row, ["dkbs_name"], code);
 
-    if (type === "BLOCK") {
+    if (isDkbsBlocked(row)) {
       return {
         blocked: true,
         message: message || `ĐKBS ${code}: Không phân cấp / Check lại bảng.`,
@@ -495,7 +614,7 @@ function calculateDkbs(data) {
             type,
             value,
             fee: 0,
-            message
+            message: message || "KPC"
           }
         ],
         totalRate: 0,
@@ -564,11 +683,10 @@ function clearSummary() {
   setText(els.summaryDkbsRate, "-");
   setText(els.summaryTndsFee, "-");
 
-  setText(els.vcxFeeText, "0");
-  setText(els.dkbsFeeText, "0");
-  setText(els.tndsFeeText, "0");
-  setText(els.grandTotalText, "0");
-  setText(els.totalWithTndsText, "0");
+  setText(els.vcxFeeText, "-");
+  setText(els.tndsFeeText, "-");
+  setText(els.grandTotalText, "-");
+  setText(els.totalWithTndsText, "-");
 
   if (els.selectedDkbsChips) {
     els.selectedDkbsChips.innerHTML = "";
@@ -603,6 +721,10 @@ function renderDkbs(result) {
         return `<li><strong>${item.code}</strong>: Không tìm thấy</li>`;
       }
 
+      if (normalizeCode(item.message) === "KPC" || normalizeCode(item.message) === "CHECKLẠIBẢNG") {
+        return `<li><strong>${item.code}</strong>: ${item.name} — ${item.message}</li>`;
+      }
+
       if (item.type === "FIXED") {
         return `<li><strong>${item.code}</strong>: ${item.name} — Cố định ${formatInteger(item.value)}</li>`;
       }
@@ -627,14 +749,13 @@ function updateSummary(data) {
     data.dkbsRate > 0
       ? `${formatRate(data.dkbsRate)} %`
       : data.dkbsFixed > 0
-        ? `Cố định ${formatInteger(data.dkbsFixed)}`
+        ? "Có phí cố định"
         : "-"
   );
   setText(els.summaryTndsFee, data.tndsFee ? formatInteger(data.tndsFee) : "-");
 
   setText(els.vcxFeeText, formatInteger(data.totalVcxFee));
-  setText(els.dkbsFeeText, formatInteger(data.dkbsFixed));
-  setText(els.tndsFeeText, formatInteger(data.tndsFee));
+  setText(els.tndsFeeText, data.tndsFee ? formatInteger(data.tndsFee) : "-");
   setText(els.grandTotalText, formatInteger(data.totalVcxFee));
   setText(els.totalWithTndsText, formatInteger(data.totalWithTnds));
 }
@@ -642,14 +763,21 @@ function updateSummary(data) {
 function calculateAll() {
   updateUsageYears();
   updateDurationMonths();
+  clearFieldErrors();
 
   const data = getFormData();
-  const validationError = validateForm(data);
+  const validation = validateForm(data);
 
-  if (validationError) {
+  if (!validation.valid) {
     clearSummary();
-    setStatus(validationError, true);
-    showPopup(validationError);
+
+    for (const error of validation.errors) {
+      setFieldError(error.field, error.message);
+    }
+
+    const firstMessage = validation.errors[0].message;
+    setStatus(firstMessage, true);
+    showPopup(firstMessage);
     return;
   }
 
@@ -657,6 +785,8 @@ function calculateAll() {
 
   if (!vcxRow) {
     clearSummary();
+    setFieldError("vehicleType", "Không tìm thấy tỉ lệ VCX phù hợp.");
+    setFieldError("insuredValue", "Không tìm thấy dòng tra theo số tiền bảo hiểm.");
     const message = "Không tìm thấy tỉ lệ VCX phù hợp.";
     setStatus(message, true);
     showPopup(message);
@@ -667,7 +797,8 @@ function calculateAll() {
 
   if (normalizeCode(vcxRateRaw) === "KPC") {
     clearSummary();
-    const message = "VCX không phân cấp, không cho phép tính tự động.";
+    const message = "Loại xe không phân cấp, không cho phép tính tự động.";
+    setFieldError("vehicleType", message);
     setStatus(message, true);
     showPopup(message);
     return;
@@ -678,6 +809,7 @@ function calculateAll() {
   if (!vcxRate || vcxRate <= 0) {
     clearSummary();
     const message = "Tỉ lệ VCX không hợp lệ.";
+    setFieldError("vehicleType", message);
     setStatus(message, true);
     showPopup(message);
     return;
@@ -688,8 +820,10 @@ function calculateAll() {
   if (dkbsResult.blocked) {
     clearSummary();
     renderDkbs(dkbsResult);
-    setStatus(dkbsResult.message, true);
-    showPopup(dkbsResult.message);
+    const message = dkbsResult.message || "ĐKBS không phân cấp.";
+    setFieldError("dkbsInput", message);
+    setStatus(message, true);
+    showPopup(message);
     return;
   }
 
@@ -697,6 +831,7 @@ function calculateAll() {
 
   if (!durationResult.valid) {
     clearSummary();
+    setFieldError("durationMonths", durationResult.message);
     setStatus(durationResult.message, true);
     showPopup(durationResult.message);
     return;
@@ -708,6 +843,7 @@ function calculateAll() {
   if (totalRate < 0) {
     clearSummary();
     const message = "Tổng tỷ lệ VCX/ĐKBS không hợp lệ.";
+    setFieldError("dkbsInput", message);
     setStatus(message, true);
     showPopup(message);
     return;
@@ -718,6 +854,7 @@ function calculateAll() {
   if (!Number.isFinite(totalVcxFee) || totalVcxFee < 0) {
     clearSummary();
     const message = "Phí VCX không hợp lệ.";
+    setFieldError("insuredValue", message);
     setStatus(message, true);
     showPopup(message);
     return;
@@ -731,6 +868,13 @@ function calculateAll() {
     if (!tndsRow) {
       clearSummary();
       showTndsWarning(true);
+
+      if (isPassengerVehicleLabel(data.selectedVehicle.vehicle_label)) {
+        setFieldError("seatCount", "Không tìm thấy phí TNDS theo số chỗ ngồi.");
+      } else {
+        setFieldError("payload", "Không tìm thấy phí TNDS theo trọng tải.");
+      }
+
       const message = "Không tìm thấy phí TNDS phù hợp.";
       setStatus(message, true);
       showPopup(message);
@@ -787,6 +931,7 @@ function resetForm() {
   if (els.dkbsInput) els.dkbsInput.value = "04;05A;06";
   if (els.tndsParticipation) els.tndsParticipation.value = "NO";
 
+  clearFieldErrors();
   clearSummary();
   setStatus("Đã xóa dữ liệu.");
 }
@@ -827,6 +972,7 @@ function bindEvents() {
   els.clearButton?.addEventListener("click", resetForm);
 
   bindNumberInputs();
+  FIELD_ERROR_IDS.forEach(clearFieldErrorOnInput);
 }
 
 async function init() {
