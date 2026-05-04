@@ -1,7 +1,7 @@
 [
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 2,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -11,8 +11,8 @@
     "fee_with_vat": 831600
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 3,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -22,8 +22,8 @@
     "fee_with_vat": 831600
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 5,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -33,8 +33,8 @@
     "fee_with_vat": 831600
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 6,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -44,8 +44,8 @@
     "fee_with_vat": 1021900
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 7,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -55,8 +55,8 @@
     "fee_with_vat": 1188000
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 8,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -66,8 +66,8 @@
     "fee_with_vat": 1378300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 9,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -77,8 +77,8 @@
     "fee_with_vat": 1544400
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 10,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -88,8 +88,8 @@
     "fee_with_vat": 1663200
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 11,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -99,8 +99,8 @@
     "fee_with_vat": 1821600
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 12,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -110,8 +110,8 @@
     "fee_with_vat": 2004200
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 13,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -121,8 +121,8 @@
     "fee_with_vat": 2253900
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 14,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -132,8 +132,8 @@
     "fee_with_vat": 2443100
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 15,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -143,8 +143,8 @@
     "fee_with_vat": 2633400
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 16,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -154,8 +154,8 @@
     "fee_with_vat": 3359400
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 17,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -165,8 +165,8 @@
     "fee_with_vat": 2989800
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 18,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -176,8 +176,8 @@
     "fee_with_vat": 3155900
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 19,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -187,8 +187,8 @@
     "fee_with_vat": 3345100
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 20,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -198,8 +198,8 @@
     "fee_with_vat": 3510100
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 21,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -209,8 +209,8 @@
     "fee_with_vat": 3700400
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 22,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -220,8 +220,8 @@
     "fee_with_vat": 3866500
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 23,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -231,8 +231,8 @@
     "fee_with_vat": 4056800
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 24,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -242,8 +242,8 @@
     "fee_with_vat": 5095200
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 25,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -253,8 +253,8 @@
     "fee_with_vat": 5294300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 26,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -264,8 +264,8 @@
     "fee_with_vat": 5327300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 27,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -275,8 +275,8 @@
     "fee_with_vat": 5360300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 28,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -286,8 +286,8 @@
     "fee_with_vat": 5393300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 29,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -297,8 +297,8 @@
     "fee_with_vat": 5426300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 30,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -308,8 +308,8 @@
     "fee_with_vat": 5459300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 31,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -319,8 +319,8 @@
     "fee_with_vat": 5492300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 32,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -330,8 +330,8 @@
     "fee_with_vat": 5525300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 33,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -341,8 +341,8 @@
     "fee_with_vat": 5558300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 34,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -352,8 +352,8 @@
     "fee_with_vat": 5591300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 35,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -363,8 +363,8 @@
     "fee_with_vat": 5624300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 36,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -374,8 +374,8 @@
     "fee_with_vat": 5657300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 37,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -385,8 +385,8 @@
     "fee_with_vat": 5690300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 38,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -396,8 +396,8 @@
     "fee_with_vat": 5723300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 39,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -407,8 +407,8 @@
     "fee_with_vat": 5756300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 40,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -418,8 +418,8 @@
     "fee_with_vat": 5789300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 41,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -429,8 +429,8 @@
     "fee_with_vat": 5822300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 42,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -440,8 +440,8 @@
     "fee_with_vat": 5855300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 43,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -451,8 +451,8 @@
     "fee_with_vat": 5888300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 44,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -462,8 +462,8 @@
     "fee_with_vat": 5921300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 45,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -473,8 +473,8 @@
     "fee_with_vat": 5954300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 46,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -484,8 +484,8 @@
     "fee_with_vat": 5987300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 47,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -495,8 +495,8 @@
     "fee_with_vat": 6020300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 48,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -506,8 +506,8 @@
     "fee_with_vat": 6053300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 49,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -517,8 +517,8 @@
     "fee_with_vat": 6086300
   },
   {
-    "vehicle_code": "CN01",
-    "vehicle_name": "Chở người",
+    "vehicle_code": "CN13",
+    "vehicle_name": "Kinh doanh vận tải hành khách: Xe chạy tuyến, xe khách liên tỉnh (các xe ghế ngồi)",
     "seat_count": 4,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -828,226 +828,6 @@
     "vehicle_code": "CN02",
     "vehicle_name": "Bus",
     "seat_count": 29,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 30,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 31,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 32,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 33,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 34,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 35,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 36,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 37,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 38,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 39,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 40,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 41,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 42,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 43,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 44,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 45,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 46,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 47,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 48,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 1825000,
-    "vat": 182500,
-    "fee_with_vat": 2007500
-  },
-  {
-    "vehicle_code": "CN02",
-    "vehicle_name": "Bus",
-    "seat_count": 49,
     "payload_from": 0,
     "payload_to": 10000000,
     "usage": "KD",
@@ -2330,116 +2110,6 @@
     "fee_before_vat": 5533000,
     "vat": 553300,
     "fee_with_vat": 6086300
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 2,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 3,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 4,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 5,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 6,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 929000,
-    "vat": 92900,
-    "fee_with_vat": 1021900
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 2,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 3,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 4,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 5,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
-    "vehicle_code": "CN05",
-    "vehicle_name": "Xe KD Hợp đồng (KD chở người - khách du lịch,...)",
-    "seat_count": 6,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 929000,
-    "vat": 92900,
-    "fee_with_vat": 1021900
   },
   {
     "vehicle_code": "CN05",
@@ -4334,63 +4004,8 @@
     "fee_with_vat": 1231560
   },
   {
-    "vehicle_code": "CNH04",
-    "vehicle_name": "Xe, máy chuyên dùng",
-    "seat_count": 2,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 524400,
-    "vat": 52440,
-    "fee_with_vat": 576840
-  },
-  {
-    "vehicle_code": "CNH04",
-    "vehicle_name": "Xe, máy chuyên dùng",
-    "seat_count": 3,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 524400,
-    "vat": 52440,
-    "fee_with_vat": 576840
-  },
-  {
-    "vehicle_code": "CNH04",
-    "vehicle_name": "Xe, máy chuyên dùng",
-    "seat_count": 4,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 524400,
-    "vat": 52440,
-    "fee_with_vat": 576840
-  },
-  {
-    "vehicle_code": "CNH04",
-    "vehicle_name": "Xe, máy chuyên dùng",
-    "seat_count": 5,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 524400,
-    "vat": 52440,
-    "fee_with_vat": 576840
-  },
-  {
-    "vehicle_code": "CH01",
-    "vehicle_name": "Xe đầu kéo",
-    "seat_count": 0,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 4800000,
-    "vat": 480000,
-    "fee_with_vat": 5280000
-  },
-  {
-    "vehicle_code": "CH01",
-    "vehicle_name": "Xe đầu kéo",
+    "vehicle_code": "CH04",
+    "vehicle_name": "Rơ mooc",
     "seat_count": 0,
     "payload_from": 0,
     "payload_to": 10000000,
@@ -4576,28 +4191,6 @@
     "fee_with_vat": 4224000
   },
   {
-    "vehicle_code": "CH08",
-    "vehicle_name": "Tập lái vừa chở người vừa chở hàng (Pickup, minivan)",
-    "seat_count": 0,
-    "payload_from": 0,
-    "payload_to": 2999,
-    "usage": "KD",
-    "fee_before_vat": 1023600,
-    "vat": 102360,
-    "fee_with_vat": 1125960
-  },
-  {
-    "vehicle_code": "CH08",
-    "vehicle_name": "Tập lái vừa chở người vừa chở hàng (Pickup, minivan)",
-    "seat_count": 0,
-    "payload_from": 0,
-    "payload_to": 2999,
-    "usage": "KD",
-    "fee_before_vat": 1023600,
-    "vat": 102360,
-    "fee_with_vat": 1125960
-  },
-  {
     "vehicle_code": "CH09",
     "vehicle_name": "Xe đông lạnh",
     "seat_count": 0,
@@ -4658,7 +4251,7 @@
     "seat_count": 0,
     "payload_from": 15001,
     "payload_to": 10000000,
-    "usage": "KD",
+    "usage": "KKD",
     "fee_before_vat": 4800000,
     "vat": 480000,
     "fee_with_vat": 5280000
@@ -4680,7 +4273,7 @@
     "seat_count": 0,
     "payload_from": 15001,
     "payload_to": 10000000,
-    "usage": "KD",
+    "usage": "KKD",
     "fee_before_vat": 4800000,
     "vat": 480000,
     "fee_with_vat": 5280000
@@ -4691,18 +4284,7 @@
     "seat_count": 0,
     "payload_from": 15001,
     "payload_to": 10000000,
-    "usage": "KD",
-    "fee_before_vat": 4800000,
-    "vat": 480000,
-    "fee_with_vat": 5280000
-  },
-  {
-    "vehicle_code": "CH12",
-    "vehicle_name": "Rơ mooc sat xi, đóng thùng",
-    "seat_count": 0,
-    "payload_from": 15001,
-    "payload_to": 10000000,
-    "usage": "KD",
+    "usage": "KKD",
     "fee_before_vat": 4800000,
     "vat": 480000,
     "fee_with_vat": 5280000
@@ -8547,17 +8129,6 @@
     "fee_with_vat": 831600
   },
   {
-    "vehicle_code": "CN10",
-    "vehicle_name": "Xe KD chở người khác",
-    "seat_count": 4,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KKD",
-    "fee_before_vat": 756000,
-    "vat": 75600,
-    "fee_with_vat": 831600
-  },
-  {
     "vehicle_code": "CN11",
     "vehicle_name": "Xe chở tiền",
     "seat_count": 2,
@@ -8622,6 +8193,435 @@
     "fee_before_vat": 437000,
     "vat": 43700,
     "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH01",
+    "vehicle_name": "Xe bán tải (Pickup)",
+    "seat_count": 4,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH01",
+    "vehicle_name": "Xe bán tải (Pickup)",
+    "seat_count": 5,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH02",
+    "vehicle_name": "Xe Tải van",
+    "seat_count": 2,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH02",
+    "vehicle_name": "Xe Tải van",
+    "seat_count": 3,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH02",
+    "vehicle_name": "Xe Tải van",
+    "seat_count": 4,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH02",
+    "vehicle_name": "Xe Tải van",
+    "seat_count": 5,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 437000,
+    "vat": 43700,
+    "fee_with_vat": 480700
+  },
+  {
+    "vehicle_code": "CNH03",
+    "vehicle_name": "Xe cứu thương",
+    "seat_count": 2,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 1119600,
+    "vat": 111960,
+    "fee_with_vat": 1231560
+  },
+  {
+    "vehicle_code": "CNH03",
+    "vehicle_name": "Xe cứu thương",
+    "seat_count": 3,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 1119600,
+    "vat": 111960,
+    "fee_with_vat": 1231560
+  },
+  {
+    "vehicle_code": "CNH03",
+    "vehicle_name": "Xe cứu thương",
+    "seat_count": 4,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 1119600,
+    "vat": 111960,
+    "fee_with_vat": 1231560
+  },
+  {
+    "vehicle_code": "CNH03",
+    "vehicle_name": "Xe cứu thương",
+    "seat_count": 5,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 1119600,
+    "vat": 111960,
+    "fee_with_vat": 1231560
+  },
+  {
+    "vehicle_code": "CH04",
+    "vehicle_name": "Rơ mooc",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 4800000,
+    "vat": 480000,
+    "fee_with_vat": 5280000
+  },
+  {
+    "vehicle_code": "CH02",
+    "vehicle_name": "Xe KD vận tải - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 853000,
+    "vat": 85300,
+    "fee_with_vat": 938300
+  },
+  {
+    "vehicle_code": "CH02",
+    "vehicle_name": "Xe KD vận tải - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 8000,
+    "usage": "KKD",
+    "fee_before_vat": 1660000,
+    "vat": 166000,
+    "fee_with_vat": 1826000
+  },
+  {
+    "vehicle_code": "CH02",
+    "vehicle_name": "Xe KD vận tải - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
+  },
+  {
+    "vehicle_code": "CH02",
+    "vehicle_name": "Xe KD vận tải - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 15001,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
+  },
+  {
+    "vehicle_code": "CH05",
+    "vehicle_name": "Xe chở hàng - Khác",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 853000,
+    "vat": 85300,
+    "fee_with_vat": 938300
+  },
+  {
+    "vehicle_code": "CH05",
+    "vehicle_name": "Xe chở hàng - Khác",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 8000,
+    "usage": "KKD",
+    "fee_before_vat": 1660000,
+    "vat": 166000,
+    "fee_with_vat": 1826000
+  },
+  {
+    "vehicle_code": "CH05",
+    "vehicle_name": "Xe chở hàng - Khác",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
+  },
+  {
+    "vehicle_code": "CH05",
+    "vehicle_name": "Xe chở hàng - Khác",
+    "seat_count": 0,
+    "payload_from": 15001,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 1023600,
+    "vat": 102360,
+    "fee_with_vat": 1125960
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 8000,
+    "usage": "KKD",
+    "fee_before_vat": 1992000,
+    "vat": 199200,
+    "fee_with_vat": 2191200
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 3295200,
+    "vat": 329520,
+    "fee_with_vat": 3624720
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 15001,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 3840000,
+    "vat": 384000,
+    "fee_with_vat": 4224000
+  },
+  {
+    "vehicle_code": "CH07",
+    "vehicle_name": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 1023600,
+    "vat": 102360,
+    "fee_with_vat": 1125960
+  },
+  {
+    "vehicle_code": "CH07",
+    "vehicle_name": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 8000,
+    "usage": "KKD",
+    "fee_before_vat": 1992000,
+    "vat": 199200,
+    "fee_with_vat": 2191200
+  },
+  {
+    "vehicle_code": "CH07",
+    "vehicle_name": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 3295200,
+    "vat": 329520,
+    "fee_with_vat": 3624720
+  },
+  {
+    "vehicle_code": "CH07",
+    "vehicle_name": "Xe chuyên dùng (chở xăng dầu, chở rác,...)",
+    "seat_count": 0,
+    "payload_from": 15001,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 3840000,
+    "vat": 384000,
+    "fee_with_vat": 4224000
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 1023600,
+    "vat": 102360,
+    "fee_with_vat": 1125960
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 7999,
+    "usage": "KKD",
+    "fee_before_vat": 1992000,
+    "vat": 199200,
+    "fee_with_vat": 2191200
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 8000,
+    "payload_to": 149999,
+    "usage": "KKD",
+    "fee_before_vat": 3295200,
+    "vat": 329520,
+    "fee_with_vat": 3624720
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 15000,
+    "payload_to": 100000,
+    "usage": "KKD",
+    "fee_before_vat": 3840000,
+    "vat": 384000,
+    "fee_with_vat": 4224000
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KD",
+    "fee_before_vat": 1023600,
+    "vat": 102360,
+    "fee_with_vat": 1125960
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 7999,
+    "usage": "KD",
+    "fee_before_vat": 1992000,
+    "vat": 199200,
+    "fee_with_vat": 2191200
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 8000,
+    "payload_to": 149999,
+    "usage": "KD",
+    "fee_before_vat": 3295200,
+    "vat": 329520,
+    "fee_with_vat": 3624720
+  },
+  {
+    "vehicle_code": "CH06",
+    "vehicle_name": "Xe chở hàng khác - Xe tập lái chở hàng",
+    "seat_count": 0,
+    "payload_from": 15000,
+    "payload_to": 100000,
+    "usage": "KD",
+    "fee_before_vat": 3840000,
+    "vat": 384000,
+    "fee_with_vat": 4224000
+  },
+  {
+    "vehicle_code": "CH09",
+    "vehicle_name": "Xe đông lạnh",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 2999,
+    "usage": "KKD",
+    "fee_before_vat": 1023600,
+    "vat": 102360,
+    "fee_with_vat": 1125960
+  },
+  {
+    "vehicle_code": "CH09",
+    "vehicle_name": "Xe đông lạnh",
+    "seat_count": 0,
+    "payload_from": 3000,
+    "payload_to": 8000,
+    "usage": "KKD",
+    "fee_before_vat": 1992000,
+    "vat": 199200,
+    "fee_with_vat": 2191200
+  },
+  {
+    "vehicle_code": "CH09",
+    "vehicle_name": "Xe đông lạnh",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 3295200,
+    "vat": 329520,
+    "fee_with_vat": 3624720
+  },
+  {
+    "vehicle_code": "CH09",
+    "vehicle_name": "Xe đông lạnh",
+    "seat_count": 0,
+    "payload_from": 15001,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 3840000,
+    "vat": 384000,
+    "fee_with_vat": 4224000
   },
   {
     "vehicle_code": "CNH01",
@@ -9106,5 +9106,49 @@
     "fee_before_vat": 4800000,
     "vat": 480000,
     "fee_with_vat": 5280000
+  },
+  {
+    "vehicle_code": "CH03",
+    "vehicle_name": "Xe tải trên 10 tấn - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 15000,
+    "payload_to": 100000,
+    "usage": "KKD",
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
+  },
+  {
+    "vehicle_code": "CH03",
+    "vehicle_name": "Xe tải trên 10 tấn - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 15000,
+    "payload_to": 100000,
+    "usage": "KD",
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
+  },
+  {
+    "vehicle_code": "CH03",
+    "vehicle_name": "Xe tải trên 10 tấn - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KD",
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
+  },
+  {
+    "vehicle_code": "CH03",
+    "vehicle_name": "Xe tải trên 10 tấn - Chở hàng",
+    "seat_count": 0,
+    "payload_from": 8001,
+    "payload_to": 15000,
+    "usage": "KKD",
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
   }
 ]
