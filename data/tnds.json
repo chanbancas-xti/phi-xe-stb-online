@@ -4197,9 +4197,9 @@
     "payload_from": 0,
     "payload_to": 2999,
     "usage": "KD",
-    "fee_before_vat": 1023600,
-    "vat": 102360,
-    "fee_with_vat": 1125960
+    "fee_before_vat": 853000,
+    "vat": 85300,
+    "fee_with_vat": 938300
   },
   {
     "vehicle_code": "CH09",
@@ -4208,9 +4208,9 @@
     "payload_from": 3000,
     "payload_to": 8000,
     "usage": "KD",
-    "fee_before_vat": 1992000,
-    "vat": 199200,
-    "fee_with_vat": 2191200
+    "fee_before_vat": 1660000,
+    "vat": 166000,
+    "fee_with_vat": 1826000
   },
   {
     "vehicle_code": "CH09",
@@ -4219,9 +4219,9 @@
     "payload_from": 8001,
     "payload_to": 15000,
     "usage": "KD",
-    "fee_before_vat": 3295200,
-    "vat": 329520,
-    "fee_with_vat": 3624720
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
   },
   {
     "vehicle_code": "CH09",
@@ -4230,9 +4230,9 @@
     "payload_from": 15001,
     "payload_to": 10000000,
     "usage": "KD",
-    "fee_before_vat": 3840000,
-    "vat": 384000,
-    "fee_with_vat": 4224000
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
   },
   {
     "vehicle_code": "CH10",
@@ -8586,9 +8586,9 @@
     "payload_from": 0,
     "payload_to": 2999,
     "usage": "KKD",
-    "fee_before_vat": 1023600,
-    "vat": 102360,
-    "fee_with_vat": 1125960
+    "fee_before_vat": 853000,
+    "vat": 85300,
+    "fee_with_vat": 938300
   },
   {
     "vehicle_code": "CH09",
@@ -8597,9 +8597,9 @@
     "payload_from": 3000,
     "payload_to": 8000,
     "usage": "KKD",
-    "fee_before_vat": 1992000,
-    "vat": 199200,
-    "fee_with_vat": 2191200
+    "fee_before_vat": 1660000,
+    "vat": 166000,
+    "fee_with_vat": 1826000
   },
   {
     "vehicle_code": "CH09",
@@ -8608,9 +8608,9 @@
     "payload_from": 8001,
     "payload_to": 15000,
     "usage": "KKD",
-    "fee_before_vat": 3295200,
-    "vat": 329520,
-    "fee_with_vat": 3624720
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
   },
   {
     "vehicle_code": "CH09",
@@ -8619,9 +8619,9 @@
     "payload_from": 15001,
     "payload_to": 10000000,
     "usage": "KKD",
-    "fee_before_vat": 3840000,
-    "vat": 384000,
-    "fee_with_vat": 4224000
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
   },
   {
     "vehicle_code": "CNH01",
@@ -8776,6 +8776,17 @@
     "fee_before_vat": 524400,
     "vat": 52440,
     "fee_with_vat": 576840
+  },
+  {
+    "vehicle_code": "CH01",
+    "vehicle_name": "Xe đầu kéo",
+    "seat_count": 0,
+    "payload_from": 0,
+    "payload_to": 10000000,
+    "usage": "KKD",
+    "fee_before_vat": 4800000,
+    "vat": 480000,
+    "fee_with_vat": 5280000
   },
   {
     "vehicle_code": "CH01",
@@ -8789,17 +8800,6 @@
     "fee_with_vat": 5280000
   },
   {
-    "vehicle_code": "CH01",
-    "vehicle_name": "Xe đầu kéo",
-    "seat_count": 0,
-    "payload_from": 0,
-    "payload_to": 10000000,
-    "usage": "KKD",
-    "fee_before_vat": 4800000,
-    "vat": 480000,
-    "fee_with_vat": 5280000
-  },
-  {
     "vehicle_code": "CH02",
     "vehicle_name": "Xe KD vận tải - Chở hàng",
     "seat_count": 0,
@@ -9004,9 +9004,9 @@
     "payload_from": 0,
     "payload_to": 2999,
     "usage": "KKD",
-    "fee_before_vat": 1023600,
-    "vat": 102360,
-    "fee_with_vat": 1125960
+    "fee_before_vat": 853000,
+    "vat": 85300,
+    "fee_with_vat": 938300
   },
   {
     "vehicle_code": "CH09",
@@ -9015,9 +9015,9 @@
     "payload_from": 3000,
     "payload_to": 8000,
     "usage": "KKD",
-    "fee_before_vat": 1992000,
-    "vat": 199200,
-    "fee_with_vat": 2191200
+    "fee_before_vat": 1660000,
+    "vat": 166000,
+    "fee_with_vat": 1826000
   },
   {
     "vehicle_code": "CH09",
@@ -9026,9 +9026,9 @@
     "payload_from": 8001,
     "payload_to": 15000,
     "usage": "KKD",
-    "fee_before_vat": 3295200,
-    "vat": 329520,
-    "fee_with_vat": 3624720
+    "fee_before_vat": 2746000,
+    "vat": 274600,
+    "fee_with_vat": 3020600
   },
   {
     "vehicle_code": "CH09",
@@ -9037,9 +9037,9 @@
     "payload_from": 15001,
     "payload_to": 10000000,
     "usage": "KKD",
-    "fee_before_vat": 3840000,
-    "vat": 384000,
-    "fee_with_vat": 4224000
+    "fee_before_vat": 3200000,
+    "vat": 320000,
+    "fee_with_vat": 3520000
   },
   {
     "vehicle_code": "CH10",
