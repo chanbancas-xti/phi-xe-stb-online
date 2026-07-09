@@ -1,3 +1,5 @@
+// /app.js
+
 const MIN_AMOUNT = 200_000_000;
 const PASSENGER_LABELS = [
   "Chở người",
@@ -12,6 +14,7 @@ const FIELD_ERROR_IDS = [
   "durationMonths",
   "usage",
   "vehicleType",
+  "deductible", // thêm dòng này
   "manufactureYear",
   "usageYears",
   "seatCount",
@@ -30,6 +33,7 @@ const state = {
 const els = {
   usage: document.getElementById("usage"),
   vehicleType: document.getElementById("vehicleType"),
+  deductible: document.getElementById("deductible"), // thêm dòng này
   vehicleValue: document.getElementById("vehicleValue"),
   insuredValue: document.getElementById("insuredValue"),
   startDate: document.getElementById("startDate"),
@@ -48,6 +52,7 @@ const els = {
 
   summaryUsage: document.getElementById("summaryUsage"),
   summaryVehicleType: document.getElementById("summaryVehicleType"),
+  summaryDeductible: document.getElementById("summaryDeductible"), // thêm dòng này
   summaryUsageYears: document.getElementById("summaryUsageYears"),
   summaryInsuredValue: document.getElementById("summaryInsuredValue"),
   summaryVcxRate: document.getElementById("summaryVcxRate"),
@@ -370,6 +375,7 @@ function getFormData() {
   return {
     usage: els.usage?.value ?? "",
     selectedVehicle,
+    deductible: Number(els.deductible?.value || 0), // thêm dòng này
     vehicleValue: parseInputNumber(els.vehicleValue?.value),
     insuredValue: parseInputNumber(els.insuredValue?.value),
     startDate: els.startDate?.value ?? "",
@@ -421,6 +427,10 @@ function validateForm(data) {
 
   if (!data.selectedVehicle) {
     errors.push({ field: "vehicleType", message: "Bạn chưa chọn loại xe." });
+  }
+
+  if (!data.deductible) {
+    errors.push({ field: "deductible", message: "Bạn chưa chọn mức khấu trừ." });
   }
 
   if (data.vehicleValue < MIN_AMOUNT) {
@@ -719,6 +729,7 @@ function findTndsRow(data) {
 function clearSummary() {
   setText(els.summaryUsage, "-");
   setText(els.summaryVehicleType, "-");
+  setText(els.summaryDeductible, "-"); // thêm dòng này
   setText(els.summaryUsageYears, "-");
   setText(els.summaryInsuredValue, "-");
   setText(els.summaryVcxRate, "-");
@@ -783,6 +794,10 @@ function renderDkbs(result) {
 function updateSummary(data) {
   setText(els.summaryUsage, data.usage || "-");
   setText(els.summaryVehicleType, data.selectedVehicle?.vehicle_label || "-");
+  setText(
+    els.summaryDeductible,
+    data.deductible ? `${formatInteger(data.deductible)} đ` : "-"
+  );
   setText(els.summaryUsageYears, String(data.usageYears || 0));
   setText(els.summaryInsuredValue, formatInteger(data.insuredValue || 0));
   setText(els.summaryVcxRate, data.vcxRate ? `${formatRate(data.vcxRate)} %` : "-");
@@ -966,6 +981,7 @@ function resetForm() {
     els.vehicleType.innerHTML = '<option value="">Chọn loại xe</option>';
     els.vehicleType.disabled = true;
   }
+  if (els.deductible) els.deductible.value = ""; // thêm dòng này
   if (els.manufactureYear) els.manufactureYear.value = "";
   if (els.usageYears) els.usageYears.value = "";
   if (els.seatCount) els.seatCount.value = "";
