@@ -170,7 +170,7 @@ function showTndsWarning(show) {
   }
 
   els.tndsWarning.style.display = show ? "block" : "none";
-  els.tndsWarning.textContent = "Phí TNDS chỉ tính cho 1 năm.";
+  els.tndsWarning.textContent = "Phí TNDS BB & TN chỉ tính cho 1 năm.";
 }
 
 function getField(row, keys, fallback = "") {
