@@ -608,6 +608,17 @@
                 <label for="payload">Trọng tải</label>
                 <input id="payload" type="number" placeholder="Ví dụ: 3500" />
               </div>
+              <!-- /index.html -->
+            <!-- Thêm vào form-->
+              <div class="field">
+                <label for="passengerAccidentInsuredAmount">Tiền BH TN người được chở & lái xe</label>
+                <input
+                  id="passengerAccidentInsuredAmount"
+                  type="text"
+                  value="10.000.000/người/vụ/1 năm"
+                  readonly
+                />
+              </div>              
 
               <div class="field">
                 <label for="tndsParticipation">TNDS</label>
@@ -633,7 +644,7 @@
             </div>
 
             <div id="tndsWarning" class="warning-note">
-              Phí TNDS chỉ tính cho 1 năm.
+              Phí TNDS BB và TN người được chở & lái xe chỉ tính cho 1 năm.
             </div>
           </div>
         </div>
@@ -664,6 +675,10 @@
                 <td>Tiền bảo hiểm</td>
                 <td id="summaryInsuredValue">-</td>
               </tr>
+               <!-- Thêm vào form-->
+               <td>Tiền BH TN NN/người/năm</td>
+                <td id="summaryPassengerAccidentInsuredAmount">-</td>
+              </tr>              
               <tr>
                 <td>Tỉ lệ VCX</td>
                 <td id="summaryVcxRate">-</td>
@@ -691,8 +706,14 @@
                 <span class="result-value" id="tndsFeeText">-</span>
               </div>
 
+              <!-- Thêm vào form-->
+              <div class="result-row">
+                <span class="result-label">Phí TNDSTN NN 1 năm (III)</span>
+                <span class="result-value" id="passengerAccidentFeeText">-</span>
+              </div>              
+
               <div class="result-row final">
-                <span class="result-label">Tổng (I) + (II)</span>
+                <span class="result-label">Tổng (I) + (II) + (III)</span>
                 <span class="result-value" id="totalWithTndsText">-</span>
               </div>
             </div>
@@ -706,7 +727,7 @@
             </div>
 
             <div class="note">
-              Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT) = Tổng phí VCX + TNDS 1 năm
+              Tổng phí BH bao gồm TNDS 1 năm (bao gồm VAT) = Tổng phí VCX + TNDS 1 năm + TNDSTN NN 1 năm
             </div>
           </div>
         </div>
