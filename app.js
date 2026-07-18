@@ -1,6 +1,11 @@
 // /app.js
 
 const MIN_AMOUNT = 200_000_000;
+const PASSENGER_ACCIDENT_INSURED_AMOUNT = 10_000_000;
+const PASSENGER_ACCIDENT_FEE_BY_USAGE = {
+  KD: 15_000,
+  KKD: 10_000
+};
 const PASSENGER_LABELS = [
   "Chở người",
   "Xe KD Hợp đồng (KD chở người - khách du lịch,...)"
@@ -43,6 +48,7 @@ const els = {
   usageYears: document.getElementById("usageYears"),
   seatCount: document.getElementById("seatCount"),
   payload: document.getElementById("payload"),
+  passengerAccidentInsuredAmount: document.getElementById("passengerAccidentInsuredAmount"),
   dkbsInput: document.getElementById("dkbsInput"),
   tndsParticipation: document.getElementById("tndsParticipation"),
   calculateButton: document.getElementById("calculateButton"),
@@ -55,12 +61,14 @@ const els = {
   summaryDeductible: document.getElementById("summaryDeductible"), // thêm dòng này
   summaryUsageYears: document.getElementById("summaryUsageYears"),
   summaryInsuredValue: document.getElementById("summaryInsuredValue"),
+  summaryPassengerAccidentInsuredAmount: document.getElementById("summaryPassengerAccidentInsuredAmount"),
   summaryVcxRate: document.getElementById("summaryVcxRate"),
   summaryDkbsRate: document.getElementById("summaryDkbsRate"),
   summaryTndsFee: document.getElementById("summaryTndsFee"),
 
   vcxFeeText: document.getElementById("vcxFeeText"),
   tndsFeeText: document.getElementById("tndsFeeText"),
+  passengerAccidentFeeText: document.getElementById("passengerAccidentFeeText"),
   grandTotalText: document.getElementById("grandTotalText"),
   totalWithTndsText: document.getElementById("totalWithTndsText"),
 
@@ -385,8 +393,23 @@ function getFormData() {
     usageYears: Number(els.usageYears?.value || 0),
     seatCount: Number(els.seatCount?.value || 0),
     payload: Number(els.payload?.value || 0),
+    passengerAccidentInsuredAmount: PASSENGER_ACCIDENT_INSURED_AMOUNT,
     dkbsText: els.dkbsInput?.value ?? "",
     tndsParticipation: normalizeCode(els.tndsParticipation?.value ?? "NO")
+  };
+}
+
+// Phi TNDS TN da bao gom VAT va chi tinh cho 1 nam:
+// KD = 15.000 x so cho ngoi; KKD = 10.000 x so cho ngoi.
+function calculatePassengerAccidentFee(data) {
+  const feePerSeat =
+    PASSENGER_ACCIDENT_FEE_BY_USAGE[normalizeCode(data.usage)] || 0;
+  const seatCount = Math.max(0, Number(data.seatCount || 0));
+
+  return {
+    insuredAmount: PASSENGER_ACCIDENT_INSURED_AMOUNT,
+    feePerSeat,
+    totalFee: feePerSeat * seatCount
   };
 }
 
@@ -488,14 +511,10 @@ function validateForm(data) {
     });
   }
 
-  const isPassengerForVcx = data.selectedVehicle
-    ? isPassengerVehicleLabel(data.selectedVehicle.vehicle_label)
-    : false;
-
-  if (isPassengerForVcx && data.seatCount <= 0) {
+  if (data.seatCount <= 0) {
     errors.push({
       field: "seatCount",
-      message: "Bắt buộc điền số chỗ ngồi cho loại xe này."
+      message: "Bắt buộc điền số chỗ ngồi để tính phí TNDS TN người được chở trên xe và lái xe."
     });
   }
 
@@ -732,12 +751,14 @@ function clearSummary() {
   setText(els.summaryDeductible, "-"); // thêm dòng này
   setText(els.summaryUsageYears, "-");
   setText(els.summaryInsuredValue, "-");
+  setText(els.summaryPassengerAccidentInsuredAmount, "-");
   setText(els.summaryVcxRate, "-");
   setText(els.summaryDkbsRate, "-");
   setText(els.summaryTndsFee, "-");
 
   setText(els.vcxFeeText, "-");
   setText(els.tndsFeeText, "-");
+  setText(els.passengerAccidentFeeText, "-");
   setText(els.grandTotalText, "-");
   setText(els.totalWithTndsText, "-");
 
@@ -800,6 +821,10 @@ function updateSummary(data) {
   );
   setText(els.summaryUsageYears, String(data.usageYears || 0));
   setText(els.summaryInsuredValue, formatInteger(data.insuredValue || 0));
+  setText(
+    els.summaryPassengerAccidentInsuredAmount,
+    `${formatInteger(data.passengerAccidentInsuredAmount || PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`
+  );
   setText(els.summaryVcxRate, data.vcxRate ? `${formatRate(data.vcxRate)} %` : "-");
   setText(
     els.summaryDkbsRate,
@@ -813,6 +838,7 @@ function updateSummary(data) {
 
   setText(els.vcxFeeText, formatInteger(data.totalVcxFee));
   setText(els.tndsFeeText, data.tndsFee ? formatInteger(data.tndsFee) : "-");
+  setText(els.passengerAccidentFeeText, formatInteger(data.passengerAccidentFee || 0));
   setText(els.grandTotalText, formatInteger(data.totalVcxFee));
   setText(els.totalWithTndsText, formatInteger(data.totalWithTnds));
 }
@@ -955,6 +981,8 @@ function calculateAll() {
     showTndsWarning(false);
   }
 
+  const passengerAccidentResult = calculatePassengerAccidentFee(data);
+
   renderDkbs(dkbsResult);
 
   updateSummary({
@@ -964,7 +992,9 @@ function calculateAll() {
     dkbsFixed: dkbsResult.totalFixed,
     totalVcxFee,
     tndsFee,
-    totalWithTnds: totalVcxFee + tndsFee
+    passengerAccidentInsuredAmount: passengerAccidentResult.insuredAmount,
+    passengerAccidentFee: passengerAccidentResult.totalFee,
+    totalWithTnds: totalVcxFee + tndsFee + passengerAccidentResult.totalFee
   });
 
   setStatus("Đã tính phí thành công.");
@@ -986,6 +1016,10 @@ function resetForm() {
   if (els.usageYears) els.usageYears.value = "";
   if (els.seatCount) els.seatCount.value = "";
   if (els.payload) els.payload.value = "";
+  if (els.passengerAccidentInsuredAmount) {
+    els.passengerAccidentInsuredAmount.value =
+      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`;
+  }
   if (els.dkbsInput) els.dkbsInput.value = "04;05A;06";
   if (els.tndsParticipation) els.tndsParticipation.value = "NO";
 
@@ -1045,6 +1079,11 @@ async function init() {
   state.vcxRates = vcxRates;
   state.dkbsRates = dkbsRates;
   state.tndsRates = tndsRates;
+
+  if (els.passengerAccidentInsuredAmount) {
+    els.passengerAccidentInsuredAmount.value =
+      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`;
+  }
 
   bindEvents();
   clearSummary();
