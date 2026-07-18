@@ -69,7 +69,6 @@ const els = {
   vcxFeeText: document.getElementById("vcxFeeText"),
   tndsFeeText: document.getElementById("tndsFeeText"),
   passengerAccidentFeeText: document.getElementById("passengerAccidentFeeText"),
-  grandTotalText: document.getElementById("grandTotalText"),
   totalWithTndsText: document.getElementById("totalWithTndsText"),
 
   selectedDkbsChips: document.getElementById("selectedDkbsChips"),
@@ -759,7 +758,6 @@ function clearSummary() {
   setText(els.vcxFeeText, "-");
   setText(els.tndsFeeText, "-");
   setText(els.passengerAccidentFeeText, "-");
-  setText(els.grandTotalText, "-");
   setText(els.totalWithTndsText, "-");
 
   if (els.selectedDkbsChips) {
@@ -839,7 +837,6 @@ function updateSummary(data) {
   setText(els.vcxFeeText, formatInteger(data.totalVcxFee));
   setText(els.tndsFeeText, data.tndsFee ? formatInteger(data.tndsFee) : "-");
   setText(els.passengerAccidentFeeText, formatInteger(data.passengerAccidentFee || 0));
-  setText(els.grandTotalText, formatInteger(data.totalVcxFee));
   setText(els.totalWithTndsText, formatInteger(data.totalWithTnds));
 }
 
