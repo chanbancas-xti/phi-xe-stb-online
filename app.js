@@ -821,7 +821,7 @@ function updateSummary(data) {
   setText(els.summaryInsuredValue, formatInteger(data.insuredValue || 0));
   setText(
     els.summaryPassengerAccidentInsuredAmount,
-    `${formatInteger(data.passengerAccidentInsuredAmount || PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`
+    `${formatInteger(data.passengerAccidentInsuredAmount || PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`
   );
   setText(els.summaryVcxRate, data.vcxRate ? `${formatRate(data.vcxRate)} %` : "-");
   setText(
