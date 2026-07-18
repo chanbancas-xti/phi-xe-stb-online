@@ -1015,7 +1015,7 @@ function resetForm() {
   if (els.payload) els.payload.value = "";
   if (els.passengerAccidentInsuredAmount) {
     els.passengerAccidentInsuredAmount.value =
-      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`;
+      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`;
   }
   if (els.dkbsInput) els.dkbsInput.value = "04;05A;06";
   if (els.tndsParticipation) els.tndsParticipation.value = "NO";
@@ -1079,7 +1079,7 @@ async function init() {
 
   if (els.passengerAccidentInsuredAmount) {
     els.passengerAccidentInsuredAmount.value =
-      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ/1 năm`;
+      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`;
   }
 
   bindEvents();
