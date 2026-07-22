@@ -1,8 +1,3 @@
-
-
-
-
-
 <!doctype html>
 <html lang="vi">
 <head>
@@ -617,12 +612,10 @@
             <!-- Thêm vào form-->
               <div class="field">
                 <label for="passengerAccidentInsuredAmount">Mức TNTN người được chở & lái xe</label>
-                <input
-                  id="passengerAccidentInsuredAmount"
-                  type="text"
-                  value="10.000.000/người/vụ"
-                  readonly
-                />
+                <select id="passengerAccidentInsuredAmount">
+                  <option value="0">Không tham gia</option>
+                  <option value="10000000">10.000.000/người/vụ</option>
+                </select>
               </div>              
 
               <div class="field">
@@ -680,8 +673,8 @@
                 <td>Tiền bảo hiểm</td>
                 <td id="summaryInsuredValue">-</td>
               </tr>
-               <!-- Thêm vào form-->
-               <td>Mức TNTN người được chở & lái xe</td>
+              <tr>
+                <td>Mức TNTN người được chở & lái xe</td>
                 <td id="summaryPassengerAccidentInsuredAmount">-</td>
               </tr>              
               <tr>
