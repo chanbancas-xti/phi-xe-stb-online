@@ -24,6 +24,7 @@ const FIELD_ERROR_IDS = [
   "usageYears",
   "seatCount",
   "payload",
+  "passengerAccidentInsuredAmount",
   "dkbsInput",
   "tndsParticipation"
 ];
@@ -392,7 +393,7 @@ function getFormData() {
     usageYears: Number(els.usageYears?.value || 0),
     seatCount: Number(els.seatCount?.value || 0),
     payload: Number(els.payload?.value || 0),
-    passengerAccidentInsuredAmount: PASSENGER_ACCIDENT_INSURED_AMOUNT,
+    passengerAccidentInsuredAmount: Number(els.passengerAccidentInsuredAmount?.value || 0),
     dkbsText: els.dkbsInput?.value ?? "",
     tndsParticipation: normalizeCode(els.tndsParticipation?.value ?? "NO")
   };
@@ -401,12 +402,23 @@ function getFormData() {
 // Phi TNDS TN da bao gom VAT va chi tinh cho 1 nam:
 // KD = 15.000 x so cho ngoi; KKD = 10.000 x so cho ngoi.
 function calculatePassengerAccidentFee(data) {
+  const insuredAmount = Number(data.passengerAccidentInsuredAmount || 0);
+
+  // Không tham gia thì không tính phí TNTN.
+  if (insuredAmount <= 0) {
+    return {
+      insuredAmount: 0,
+      feePerSeat: 0,
+      totalFee: 0
+    };
+  }
+
   const feePerSeat =
     PASSENGER_ACCIDENT_FEE_BY_USAGE[normalizeCode(data.usage)] || 0;
   const seatCount = Math.max(0, Number(data.seatCount || 0));
 
   return {
-    insuredAmount: PASSENGER_ACCIDENT_INSURED_AMOUNT,
+    insuredAmount,
     feePerSeat,
     totalFee: feePerSeat * seatCount
   };
@@ -510,10 +522,10 @@ function validateForm(data) {
     });
   }
 
-  if (data.seatCount <= 0) {
+  if (data.passengerAccidentInsuredAmount > 0 && data.seatCount <= 0) {
     errors.push({
       field: "seatCount",
-      message: "Bắt buộc điền số chỗ ngồi để tính phí TNDS TN người được chở trên xe và lái xe."
+      message: "Bắt buộc điền số chỗ ngồi khi tham gia TNTN người được chở & lái xe."
     });
   }
 
@@ -821,7 +833,9 @@ function updateSummary(data) {
   setText(els.summaryInsuredValue, formatInteger(data.insuredValue || 0));
   setText(
     els.summaryPassengerAccidentInsuredAmount,
-    `${formatInteger(data.passengerAccidentInsuredAmount || PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`
+    data.passengerAccidentInsuredAmount > 0
+      ? `${formatInteger(data.passengerAccidentInsuredAmount)}/người/vụ`
+      : "Không tham gia"
   );
   setText(els.summaryVcxRate, data.vcxRate ? `${formatRate(data.vcxRate)} %` : "-");
   setText(
@@ -836,7 +850,12 @@ function updateSummary(data) {
 
   setText(els.vcxFeeText, formatInteger(data.totalVcxFee));
   setText(els.tndsFeeText, data.tndsFee ? formatInteger(data.tndsFee) : "-");
-  setText(els.passengerAccidentFeeText, formatInteger(data.passengerAccidentFee || 0));
+  setText(
+    els.passengerAccidentFeeText,
+    data.passengerAccidentInsuredAmount > 0
+      ? formatInteger(data.passengerAccidentFee || 0)
+      : "-"
+  );
   setText(els.totalWithTndsText, formatInteger(data.totalWithTnds));
 }
 
@@ -1014,8 +1033,7 @@ function resetForm() {
   if (els.seatCount) els.seatCount.value = "";
   if (els.payload) els.payload.value = "";
   if (els.passengerAccidentInsuredAmount) {
-    els.passengerAccidentInsuredAmount.value =
-      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`;
+    els.passengerAccidentInsuredAmount.value = "0";
   }
   if (els.dkbsInput) els.dkbsInput.value = "04;05A;06";
   if (els.tndsParticipation) els.tndsParticipation.value = "NO";
@@ -1053,6 +1071,15 @@ function bindEvents() {
   els.startDate?.addEventListener("change", updateDurationMonths);
   els.endDate?.addEventListener("change", updateDurationMonths);
 
+  els.passengerAccidentInsuredAmount?.addEventListener("change", () => {
+    const participates = Number(els.passengerAccidentInsuredAmount?.value || 0) > 0;
+    setStatus(
+      participates
+        ? "Đã chọn TNTN người được chở & lái xe mức 10.000.000/người/vụ."
+        : "Đã chọn không tham gia TNTN người được chở & lái xe."
+    );
+  });
+
   els.tndsParticipation?.addEventListener("change", () => {
     showTndsWarning(normalizeCode(els.tndsParticipation?.value ?? "NO") === "YES");
   });
@@ -1078,8 +1105,7 @@ async function init() {
   state.tndsRates = tndsRates;
 
   if (els.passengerAccidentInsuredAmount) {
-    els.passengerAccidentInsuredAmount.value =
-      `${formatInteger(PASSENGER_ACCIDENT_INSURED_AMOUNT)}/người/vụ`;
+    els.passengerAccidentInsuredAmount.value = "0";
   }
 
   bindEvents();
