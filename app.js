@@ -1,7 +1,7 @@
 // /app.js
 
 const MIN_AMOUNT = 200_000_000;
-const PASSENGER_ACCIDENT_INSURED_AMOUNT = 10_000_000;
+const PASSENGER_ACCIDENT_BASE_INSURED_AMOUNT = 10_000_000;
 const PASSENGER_ACCIDENT_FEE_BY_USAGE = {
   KD: 15_000,
   KKD: 10_000
@@ -399,12 +399,13 @@ function getFormData() {
   };
 }
 
-// Phi TNDS TN da bao gom VAT va chi tinh cho 1 nam:
-// KD = 15.000 x so cho ngoi; KKD = 10.000 x so cho ngoi.
+// Phi TNTN da bao gom VAT va chi tinh cho 1 nam:
+// Muc 10 trieu: KD = 15.000/cho; KKD = 10.000/cho.
+// Muc 20 trieu: phi co ban nhan 2.
 function calculatePassengerAccidentFee(data) {
   const insuredAmount = Number(data.passengerAccidentInsuredAmount || 0);
 
-  // Không tham gia thì không tính phí TNTN.
+  // Khong tham gia thi khong tinh phi TNTN.
   if (insuredAmount <= 0) {
     return {
       insuredAmount: 0,
@@ -413,8 +414,14 @@ function calculatePassengerAccidentFee(data) {
     };
   }
 
-  const feePerSeat =
+  const baseFeePerSeat =
     PASSENGER_ACCIDENT_FEE_BY_USAGE[normalizeCode(data.usage)] || 0;
+
+  // 10 trieu = he so 1; 20 trieu = he so 2.
+  const insuredAmountFactor =
+    insuredAmount / PASSENGER_ACCIDENT_BASE_INSURED_AMOUNT;
+
+  const feePerSeat = baseFeePerSeat * insuredAmountFactor;
   const seatCount = Math.max(0, Number(data.seatCount || 0));
 
   return {
@@ -1072,10 +1079,13 @@ function bindEvents() {
   els.endDate?.addEventListener("change", updateDurationMonths);
 
   els.passengerAccidentInsuredAmount?.addEventListener("change", () => {
-    const participates = Number(els.passengerAccidentInsuredAmount?.value || 0) > 0;
+    const insuredAmount = Number(
+      els.passengerAccidentInsuredAmount?.value || 0
+    );
+
     setStatus(
-      participates
-        ? "Đã chọn TNTN người được chở & lái xe mức 10.000.000/người/vụ."
+      insuredAmount > 0
+        ? `Đã chọn TNTN người được chở & lái xe mức ${formatInteger(insuredAmount)}/người/vụ.`
         : "Đã chọn không tham gia TNTN người được chở & lái xe."
     );
   });
