@@ -4168,7 +4168,7 @@
     "usage_year_to": 2,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.56,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4181,7 +4181,7 @@
     "usage_year_to": 5,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.74,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4194,7 +4194,7 @@
     "usage_year_to": 9,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.91,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4207,7 +4207,7 @@
     "usage_year_to": 14,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 2.31,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4220,7 +4220,7 @@
     "usage_year_to": 2,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.28,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4233,7 +4233,7 @@
     "usage_year_to": 5,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.38,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4246,7 +4246,7 @@
     "usage_year_to": 9,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.56,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4259,7 +4259,7 @@
     "usage_year_to": 14,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.9,
+    "rate":"KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4272,7 +4272,7 @@
     "usage_year_to": 2,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.24,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4285,7 +4285,7 @@
     "usage_year_to": 5,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.3,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4298,7 +4298,7 @@
     "usage_year_to": 9,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.5,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4311,7 +4311,7 @@
     "usage_year_to": 14,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.9,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4324,7 +4324,7 @@
     "usage_year_to": 2,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.16,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4337,7 +4337,7 @@
     "usage_year_to": 5,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.28,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4350,7 +4350,7 @@
     "usage_year_to": 9,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.41,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
@@ -4363,7 +4363,7 @@
     "usage_year_to": 14,
     "seat_from": 0,
     "seat_to": 99,
-    "rate": 1.9,
+    "rate": "KPC",
     "vehicle_code": "CH05",
     "vehicle_name": "Xe chở hàng còn lại"
   },
